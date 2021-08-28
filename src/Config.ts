@@ -4,4 +4,7 @@ export const Config = {
 		pg: 5432,
 		redis: 6379,
 	},
+	url: {
+		minio: process.env.MINIO_URL,
+	},
 };

@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import { createServer } from 'http';
 import { connect } from 'net';
+import fetch from 'node-fetch';
 import restana from 'restana';
 import { Config } from './Config';
 import { getSubLogger } from './utils/Logger';
@@ -25,6 +26,11 @@ service.get('/service/postgres', async (req, res) => {
 
 service.get('/service/redis', async (req, res) => {
 	res.send((await connectPort(Config.ports.redis)) ? 200 : 503);
+});
+
+service.get('/service/minio', async (req, res) => {
+	const response = await fetch(Config.url.minio);
+	res.send(response.status);
 });
 
 function connectPort(port: number) {
