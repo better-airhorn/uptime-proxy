@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "ES2019",
+        "strict": true,
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "esModuleInterop": true,
+        "declaration": true,
+        "sourceMap": true,
+        "removeComments": true,
+        "alwaysStrict": true,
+        "pretty": true,
+        "incremental": true,
+        "noEmitHelpers": true,
+        "importHelpers": true,
+        "skipLibCheck": true,
+        "noUnusedLocals": true,
+        "outDir": "./dist",
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "../../node_modules/*"
+            ]
+        },
+        "types": [
+            "node"
+        ],
+    },
+    "include": [
+        "./src/**/*.ts"
+    ],
+    "exclude": [
+        "**/node_modules",
+        "**/dist",
+        "**/coverage"
+    ]
+}
